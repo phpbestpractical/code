@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import { useEffect, useState } from 'react'
 import './App.css';
 import myData from './data.json';
+import SearchComponent from './SearchComponent'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const jsonData : any = myData;
 
 function App() {
 
-  const [data, setData] = useState([]);
+  const [namelist, setData] = useState([]);
 
   const getData = () => {
 
@@ -25,21 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
-      </header>
+      <SearchComponent nameList={namelist} />
     </div>
   );
 }
