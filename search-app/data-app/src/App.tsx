@@ -1,8 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
+import { useEffect, useState } from 'react'
 import './App.css';
+import myData from './data.json';
+
+const jsonData : any = myData;
 
 function App() {
+
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+
+    setData(jsonData)
+
+  }
+
+  
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +38,7 @@ function App() {
         >
           Learn React
         </a>
+        
       </header>
     </div>
   );
